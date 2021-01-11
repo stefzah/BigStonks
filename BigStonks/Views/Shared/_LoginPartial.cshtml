@@ -1,0 +1,38 @@
+﻿@using Microsoft.AspNet.Identity
+@using BigStonks.Models
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                @Html.ActionLink("Settings", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+            </li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+            @{
+                ApplicationDbContext ctx = new ApplicationDbContext();
+                var userId = User.Identity.GetUserId();
+                var user = ctx.Users.Find(userId);
+                if (user.EnableDarkMode)
+                {
+                 <li class="align-middle"><a href='@Url.Action("SetDarkMode", "Manage")'><i class="fas fa-toggle-on fa-1x"></i> <i class="fas fa-moon fa-1x"></i></a></li>
+                }
+                else
+                {
+                 <li class="align-middle"><a href='@Url.Action("SetDarkMode", "Manage")'><i class="fas fa-toggle-off fa-1x"></i> <i class="fas fa-moon fa-1x"></i></a></li>
+                }
+                
+            }
+        </ul>
+    }
+
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}
