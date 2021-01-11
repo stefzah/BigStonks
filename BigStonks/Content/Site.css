@@ -9,6 +9,13 @@
     padding-right: 15px;
 }
 
+.btn-forumSearch{
+    background: none !important;
+    border: none;
+    padding: 0 !important;
+    font: inherit;
+}
+
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */

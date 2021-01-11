@@ -46,7 +46,13 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>
-                                <input class="form-control-static" type="text" placeholder="Search" aria-label="Search" style="margin:10px 20px 10px 20px; width:100%; text-align:center" />
+                        <!--<form >
+                        <input class="form-control-static" type="text" placeholder="Search" aria-label="Search" style="margin:10px 20px 10px 20px; width:100%; text-align:center" />
+                            -->
+                        @using (Html.BeginForm("Index", "Stock", FormMethod.Get))
+                        {
+                            @Html.TextBox("searching")<input type="submit" value="Search" />
+                        }
                     </li>
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -54,10 +60,8 @@
         </div>
     </div>
     <div class="container body-content" style="padding-top:15px">
-        <!-- Search form -->
-
+        
         @RenderBody()
-        <hr />
     </div>
 
     @Scripts.Render("~/bundles/jquery")

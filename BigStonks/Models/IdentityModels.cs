@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Security.Claims;
@@ -14,7 +15,6 @@ namespace BigStonks.Models
 
         //[Required]
         public virtual Portofolio Portofolio { get; set; }
-        
 
         [Required]
         [DefaultValue(false)]
@@ -24,8 +24,11 @@ namespace BigStonks.Models
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
+           
             // Add custom user claims here
             return userIdentity;
+
+
         }
     }
 
@@ -33,8 +36,7 @@ namespace BigStonks.Models
     {
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
-        {
-        }
+        {}
         
         public DbSet<Portofolio> Portofolios { get; set; }
         public DbSet<Stock> Stocks { get; set; }
@@ -46,25 +48,26 @@ namespace BigStonks.Models
             return new ApplicationDbContext();
         }
     }
-    
-    /*public class ApplicationDbContext : DbContext
-    {
-        public ApplicationDbContext() : base("DefaultConnection")
-        {
-            //Database.SetInitializer<ApplicationDbContext>(new Initp());
-            //Database.SetInitializer<DbCtx>(new CreateDatabaseIfNotExists<DbCtx>());
-            Database.SetInitializer<ApplicationDbContext>(new DropCreateDatabaseIfModelChanges<ApplicationDbContext>());
-            //Database.SetInitializer<DbCtx>(new DropCreateDatabaseAlways<DbCtx>());
+
+
+            /*public class ApplicationDbContext : DbContext
+            {
+                public ApplicationDbContext() : base("DefaultConnection")
+                {
+                    //Database.SetInitializer<ApplicationDbContext>(new Initp());
+                    //Database.SetInitializer<DbCtx>(new CreateDatabaseIfNotExists<DbCtx>());
+                    Database.SetInitializer<ApplicationDbContext>(new DropCreateDatabaseIfModelChanges<ApplicationDbContext>());
+                    //Database.SetInitializer<DbCtx>(new DropCreateDatabaseAlways<DbCtx>());
+                }
+
+                public static ApplicationDbContext Create()
+                {
+                    return new ApplicationDbContext();
+                }
+
+
+
+            }
+            */
+
         }
-
-        public static ApplicationDbContext Create()
-        {
-            return new ApplicationDbContext();
-        }
-
-
-        
-    }
-    */
-
-}
