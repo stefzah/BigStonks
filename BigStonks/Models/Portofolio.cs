@@ -15,10 +15,13 @@ namespace BigStonks.Models
         [DefaultValue(50000)]
         public double AccountValue { get; set; }
 
-        [DefaultValue(50000)]
+        
         [Required]
+        [DefaultValue(50000)]
         public double AvailableFunds { get; set; }
 
         public virtual ICollection<Position> Positions {get; set;}
+
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

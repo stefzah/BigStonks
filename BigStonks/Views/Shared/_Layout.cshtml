@@ -13,6 +13,7 @@
     @if (Request.IsAuthenticated)
     {
 
+        
         ApplicationDbContext ctx = new ApplicationDbContext();
         var userId = User.Identity.GetUserId();
         var user = ctx.Users.Find(userId);
@@ -24,6 +25,7 @@
         {
             <link rel="stylesheet" href="~/Content/bootstrap-light.css">
         }
+        
 
     }
 
@@ -46,10 +48,7 @@
                     <li>
                         @using (Html.BeginForm("Index", "Stock", FormMethod.Get))
                         {
-                            <div class="input-group" style="width:100%">
-                                <input type="search" class="form-control rounded" placeholder="Search Stock" aria-label="Search"
-                                       aria-describedby="search-addon" style="height:60px; width:100%" />
-                            </div>
+                            @Html.TextBox("searching", null, new {@class = "form-control rounded", @style = "height:60px"})
                         }
                     </li>
                     <li><a href="@Url.Action("Index", "Stock")" class="fas fa-home fa-3x" style="padding-top:20px"></a></li>

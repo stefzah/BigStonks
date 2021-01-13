@@ -6,6 +6,22 @@
 </br>
 <h2 style="text-align: center">@Html.DisplayFor(model => model.Ticker)</h2>
 </br>
+
+@using (Html.BeginForm("Buy", "Stock", new { id = Model.StockId }, FormMethod.Post))
+{
+    @Html.TextBox("ammount", "Amount of shares", new { @type = "number" })
+    <input type="submit" value="Buy"></input>
+}
+
+
+@if (ViewData["Error"] != null)
+{
+<div class="alert alert-danger">@ViewData["Error"]</div>
+}
+else if (ViewData["Success"] != null)
+{
+    <div class="alert alert-success">@ViewData["Success"]</div>
+}
 <div class="container fa-border h4">
     <div class="row fa-border bg-primary">
         <dl class="dl-horizontal col-xs-12 in" style="text-align:center">

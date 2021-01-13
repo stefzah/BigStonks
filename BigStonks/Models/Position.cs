@@ -18,7 +18,7 @@ namespace BigStonks.Models
         [DataType(DataType.Date)]
         public DateTime PurchaseDate { get; set; }
 
-        [Required(ErrorMessage = "Enter how many stocks to buy")]
+        [Required(ErrorMessage = "Enter how many stocks baught")]
         public int Ammount { get; set; }
 
         [Required]

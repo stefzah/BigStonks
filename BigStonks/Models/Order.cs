@@ -24,16 +24,16 @@ namespace BigStonks.Models
         public DateTime TimeFilled { get; set; }
 
         [Required]
-        public double Ammount { get; set; }
+        public int Ammount { get; set; }
 
         [Required]
-        [RegularExpression("^(Limit|Market)$")]
+        [RegularExpression("^(Buy|Sell)$")]
         public string Type { get; set; }
 
         [Required]
-        public double BuyPrice { get; set; }
+        public double Price { get; set; }
 
         [Required]
-        public double BuyTotal { get; set; }
+        public double Total { get; set; }
     }
 }

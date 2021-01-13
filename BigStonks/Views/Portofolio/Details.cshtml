@@ -1,0 +1,158 @@
+﻿@model BigStonks.Models.Portofolio
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+<div class="h3">
+    <h2>Portofolio</h2>
+    <hr />
+    <dl>
+        <dt>
+            Account value:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccountValue)
+        </dd>
+
+        <dt>
+            Available funds:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AvailableFunds)
+        </dd>
+
+    </dl>
+
+    <h2>Positions</h2>
+    <hr />
+    <table class="table table-striped table-bordered table-hover table-responsive">
+        <!---->
+        <thead>
+            <tr>
+                <th>Ticker:</th>
+                <th>Ammount:</th>
+                <th>Buy price:</th>
+                <th>Current price:</th>
+                <th>Profit:</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Positions.Count() == 0)
+            {
+                <tr>
+                    <td colspan="5" style="color:red">
+                        No positions yet
+                    </td>
+                </tr>
+            }
+            else
+            {
+                foreach (var item in Model.Positions)
+                {
+                    if (item.InitialPrice - item.Stock.Price > 0)
+                    {
+                        using (Html.BeginForm(actionName: "Sell", controllerName: "Position", method: FormMethod.Get, routeValues: new { id = item.PositionId }))
+                        {
+                            <tr class="danger">
+                                <td>@item.Stock.Ticker</td>
+                                <td>@item.Ammount</td>
+                                <td>@item.InitialPrice</td>
+                                <td>@item.Stock.Price</td>
+                                @{
+                                    var profit = item.Stock.Price * item.Ammount - item.InitialPrice * item.Ammount;
+                                }
+                                <td>@profit</td>
+                                <td width="75px"><button class="btn btn-default">Sell</button></td>
+                            </tr>
+                        }
+
+                    }
+                    else if (item.InitialPrice - item.Stock.Price < 0)
+                    {
+                        using (Html.BeginForm(actionName: "Sell", controllerName: "Position", method: FormMethod.Get, routeValues: new { id = item.PositionId }))
+                        {
+                            <tr class="success">
+                                <td>@item.Stock.Ticker</td>
+                                <td>@item.Ammount</td>
+                                <td>@item.InitialPrice</td>
+                                <td>@item.Stock.Price</td>
+                                @{
+                                    var profit = item.Stock.Price * item.Ammount - item.InitialPrice * item.Ammount;
+                                }
+                                <td>@profit</td>
+                                <td width="75px"><button class="btn btn-default">Sell</button></td>
+                            </tr>
+                        }
+
+                    }
+                    else
+                    {
+                        using (Html.BeginForm(actionName: "Sell", controllerName: "Position", method: FormMethod.Get, routeValues: new { id = item.PositionId }))
+                        {
+                            <tr class="info">
+                                <td>@item.Stock.Ticker</td>
+                                <td>@item.Ammount</td>
+                                <td>@item.InitialPrice</td>
+                                <td>@item.Stock.Price</td>
+                                @{
+                                    var profit = item.Stock.Price * item.Ammount - item.InitialPrice * item.Ammount;
+                                }
+                                <td>@profit</td>
+                                <td width="75px"><button class="btn btn-default">Sell</button></td>
+                            </tr>
+                        }
+
+                    }
+
+
+
+                }
+            }
+        </tbody>
+    </table>
+
+    <h2>Orders</h2>
+    <hr />
+
+    <table class="table table-striped table-bordered table-hover table-responsive">
+        <!---->
+        <thead>
+            <tr>
+                <th>Ticker:</th>
+                <th>Ammount:</th>
+                <th>Price:</th>
+                <th>Time:</th>
+                <th>Type:</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Orders.Count() == 0)
+            {
+                <tr>
+                    <td colspan="5" style="color:red">
+                        No orders yet
+                    </td>
+                </tr>
+            }
+            else
+            {
+                foreach (var item in Model.Orders)
+                {
+                        <tr class="info">
+                            <td>@item.Stock.Ticker</td>
+                            <td>@item.Ammount</td>
+                            <td>@item.Price</td>
+                            <td>@item.TimeOrdered</td>
+                            <td>@item.Type</td>
+                        </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

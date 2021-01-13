@@ -327,6 +327,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PortofolioController.cs" />
+    <Compile Include="Controllers\PositionController.cs" />
     <Compile Include="Controllers\SecretController.cs" />
     <Compile Include="Controllers\StockController.cs" />
     <Compile Include="Global.asax.cs">
@@ -383,6 +385,26 @@
     <Compile Include="Migrations\202101121800158_myMigration6.cs" />
     <Compile Include="Migrations\202101121800158_myMigration6.Designer.cs">
       <DependentUpon>202101121800158_myMigration6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101131621170_myMigration7.cs" />
+    <Compile Include="Migrations\202101131621170_myMigration7.Designer.cs">
+      <DependentUpon>202101131621170_myMigration7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101131632578_myMigration8.cs" />
+    <Compile Include="Migrations\202101131632578_myMigration8.Designer.cs">
+      <DependentUpon>202101131632578_myMigration8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101131654366_myMigration9.cs" />
+    <Compile Include="Migrations\202101131654366_myMigration9.Designer.cs">
+      <DependentUpon>202101131654366_myMigration9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101131706050_myMigration10.cs" />
+    <Compile Include="Migrations\202101131706050_myMigration10.Designer.cs">
+      <DependentUpon>202101131706050_myMigration10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101131707394_myMigration11.cs" />
+    <Compile Include="Migrations\202101131707394_myMigration11.Designer.cs">
+      <DependentUpon>202101131707394_myMigration11.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -461,9 +483,11 @@
     <Content Include="webfonts\fa-solid-900.woff2" />
     <Content Include="Views\Stock\Index.cshtml" />
     <Content Include="Views\Stock\Details.cshtml" />
+    <Content Include="Views\Portofolio\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Position\" />
     <Folder Include="Views\Secret\" />
   </ItemGroup>
   <ItemGroup>
@@ -518,6 +542,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101121800158_myMigration6.resx">
       <DependentUpon>202101121800158_myMigration6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101131621170_myMigration7.resx">
+      <DependentUpon>202101131621170_myMigration7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101131632578_myMigration8.resx">
+      <DependentUpon>202101131632578_myMigration8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101131654366_myMigration9.resx">
+      <DependentUpon>202101131654366_myMigration9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101131706050_myMigration10.resx">
+      <DependentUpon>202101131706050_myMigration10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101131707394_myMigration11.resx">
+      <DependentUpon>202101131707394_myMigration11.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

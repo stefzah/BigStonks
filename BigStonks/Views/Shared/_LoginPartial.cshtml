@@ -8,10 +8,11 @@
 
         <ul class="nav navbar-nav navbar-right">
             <li>
-                <a href="@Url.Action("Index", "Manage")"> Profile </a>
+                <a href="@Url.Action("Details", "Portofolio")"> Portofolio </a>
             </li>
             <li><a href="javascript:document.getElementById('logoutForm').submit()"> Log off </a></li>
             @{
+                
                 ApplicationDbContext ctx = new ApplicationDbContext();
                 var userId = User.Identity.GetUserId();
                 var user = ctx.Users.Find(userId);
@@ -23,6 +24,7 @@
                 {
                  <li class="align-middle"><a href='@Url.Action("SetDarkMode", "Manage")'><i class="fas fa-toggle-off fa-1x"></i> <i class="fas fa-moon fa-1x"></i></a></li>
                 }
+                
                 
             }
         </ul>
