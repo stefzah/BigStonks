@@ -19,12 +19,15 @@ namespace BigStonks.Models
         public DateTime PurchaseDate { get; set; }
 
         [Required(ErrorMessage = "Enter how many stocks baught")]
+        [Range(0, Int32.MaxValue)]
         public int Ammount { get; set; }
 
         [Required]
+        [Range(0, Double.MaxValue)]
         public double InitialPrice { get; set; }
 
         [Required]
+        [Range(0, Double.MaxValue)]
         public double InitialCost { get; set; }
 
     }

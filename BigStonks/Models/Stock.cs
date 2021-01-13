@@ -15,17 +15,23 @@ namespace BigStonks.Models
 
 
         //Pricing Data
-
+        [Range(0, Double.MaxValue)]
         public double Open { get; set; }
 
+        [Range(0, Double.MaxValue)]
         public double High { get; set; }
 
+        [Range(0, Double.MaxValue)]
         public double Low { get; set; }
 
         [Required]
+        [Range(0, Double.MaxValue)]
         public double Price { get; set; }
 
+        [Range(0, Int32.MaxValue)]
         public int Volume { get; set; }
+
+        [Range(0, Double.MaxValue)]
         public double PrevClose { get; set; }
         public double Change { get; set; }
         public double ChangePercent { get; set; }

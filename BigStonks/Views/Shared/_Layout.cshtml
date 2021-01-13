@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BIG STONKS</title>
+    <title>Stonks For Days</title>
     @Styles.Render("~/Content/css")
 
     <link rel="stylesheet" href="~/Content/bootstrap-light.css">
@@ -48,10 +48,13 @@
                     <li>
                         @using (Html.BeginForm("Index", "Stock", FormMethod.Get))
                         {
-                            @Html.TextBox("searching", null, new {@class = "form-control rounded", @style = "height:60px"})
+                            @Html.TextBox("searching", null, new { @class = "form-control rounded", @style = "height:60px" })
                         }
                     </li>
-                    <li><a href="@Url.Action("Index", "Stock")" class="fas fa-home fa-3x" style="padding-top:20px"></a></li>
+                    <li><a href="@Url.Action("Index", "Home")" class="fas fa-home fa-3x" style="padding-top:20px"></a></li>
+                    <li>
+                        <a href="@Url.Action("Index", "Stock")"> Stocks </a>
+                    </li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

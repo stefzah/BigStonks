@@ -67,7 +67,7 @@
                                 @{
                                     var profit = item.Stock.Price * item.Ammount - item.InitialPrice * item.Ammount;
                                 }
-                                <td>@profit</td>
+                                <td>@profit.ToString("0.00")</td>
                                 <td width="75px"><button class="btn btn-default">Sell</button></td>
                             </tr>
                         }
@@ -85,7 +85,7 @@
                                 @{
                                     var profit = item.Stock.Price * item.Ammount - item.InitialPrice * item.Ammount;
                                 }
-                                <td>@profit</td>
+                                <td>@profit.ToString("0.00")</td>
                                 <td width="75px"><button class="btn btn-default">Sell</button></td>
                             </tr>
                         }
@@ -103,7 +103,7 @@
                                 @{
                                     var profit = item.Stock.Price * item.Ammount - item.InitialPrice * item.Ammount;
                                 }
-                                <td>@profit</td>
+                                <td>@profit.ToString("0.00")</td>
                                 <td width="75px"><button class="btn btn-default">Sell</button></td>
                             </tr>
                         }

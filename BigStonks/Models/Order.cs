@@ -18,12 +18,15 @@ namespace BigStonks.Models
         public virtual Stock Stock { get; set; }
         
         [Required]
+        [DataType(DataType.Date)]
         public DateTime TimeOrdered { get; set; }
 
         [Required]
+        [DataType(DataType.Date)]
         public DateTime TimeFilled { get; set; }
 
         [Required]
+        [Range(0, Int32.MaxValue)]
         public int Ammount { get; set; }
 
         [Required]
@@ -31,9 +34,11 @@ namespace BigStonks.Models
         public string Type { get; set; }
 
         [Required]
+        [Range(0, Double.MaxValue)]
         public double Price { get; set; }
 
         [Required]
+        [Range(0, Double.MaxValue)]
         public double Total { get; set; }
     }
 }
