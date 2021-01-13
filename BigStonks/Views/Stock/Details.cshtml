@@ -1,0 +1,207 @@
+﻿@model BigStonks.Models.Stock
+
+@{
+    ViewBag.Title = "Details";
+}
+</br>
+<h2 style="text-align: center">@Html.DisplayFor(model => model.Ticker)</h2>
+</br>
+<div class="container fa-border h4">
+    <div class="row fa-border bg-primary">
+        <dl class="dl-horizontal col-xs-12 in" style="text-align:center">
+            <h3>Basic Information</h3>
+        </dl>
+    </div>
+    <div class="row bg-info">
+        </br>
+        <dl class="dl-horizontal col-xs-6 ">
+            <dt>
+                @Html.DisplayNameFor(model => model.Ticker):
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Ticker)
+            </dd>
+        </dl>
+        <dl class="dl-horizontal col-xs-6">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name):
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+        </dl>
+    </div>
+
+    <div class="row bg-info">
+        <dl class="dl-horizontal col-xs-6 ">
+            <dt>
+                @Html.DisplayNameFor(model => model.Price):
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+        </dl>
+        <dl class="dl-horizontal col-xs-6">
+            <dt>
+                @Html.DisplayNameFor(model => model.Volume):
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Volume)
+            </dd>
+        </dl>
+    </div>
+
+    <div class="row bg-info">
+        <dl class="dl-horizontal col-xs-6 ">
+            <dt>
+                @Html.DisplayNameFor(model => model.Low):
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Low)
+            </dd>
+        </dl>
+        <dl class="dl-horizontal col-xs-6">
+            <dt>
+                @Html.DisplayNameFor(model => model.High):
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.High)
+            </dd>
+        </dl>
+    </div>
+
+    <div class="row bg-info">
+        <dl class="dl-horizontal col-xs-6 ">
+            <dt>
+                @Html.DisplayNameFor(model => model.Open):
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Open)
+            </dd>
+        </dl>
+        <dl class="dl-horizontal col-xs-6">
+            <dt>
+                Close:
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.PrevClose)
+            </dd>
+        </dl>
+    </div>
+
+    <div class="row bg-info">
+        <dl class="dl-horizontal col-xs-6 ">
+            <dt>
+                @Html.DisplayNameFor(model => model.Change):
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Change)
+            </dd>
+        </dl>
+        <dl class="dl-horizontal col-xs-6">
+            <dt>
+                Change percent:
+            </dt>
+            <dd>
+                @Model.ChangePercent.ToString("0.00") %
+            </dd>
+        </dl>
+    </div>
+
+    <div class="row fa-border bg-primary">
+        <dl class="dl-horizontal col-xs-12 in" style="text-align:center">
+            <h3>Description</h3>
+        </dl>
+    </div>
+
+    <div class="row bg-info">
+        </br>
+        <p class="dl-horizontal col-xs-12">
+            @Html.DisplayFor(model => model.Description)
+        </p>
+        </br>
+    </div>
+
+    <div class="row fa-border bg-primary">
+        <dl class="dl-horizontal col-xs-12 in" style="text-align:center">
+            <h3>Additional Information</h3>
+        </dl>
+    </div>
+
+    <div class="row bg-info">
+        </br>
+        <dl class="dl-horizontal col-xs-6 ">
+            <dt>
+                @Html.DisplayNameFor(model => model.Exchange):
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Exchange)
+            </dd>
+        </dl>
+        <dl class="dl-horizontal col-xs-6">
+            <dt>
+                @Html.DisplayNameFor(model => model.Currency):
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Currency)
+            </dd>
+        </dl>
+    </div>
+
+    <div class="row bg-info">
+        <dl class="dl-horizontal col-xs-6 ">
+            <dt>
+                @Html.DisplayNameFor(model => model.Country):
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Country)
+            </dd>
+        </dl>
+        <dl class="dl-horizontal col-xs-6">
+            <dt>
+                @Html.DisplayNameFor(model => model.Sector):
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Sector);
+            </dd>
+        </dl>
+    </div>
+
+    <div class="row bg-info">
+        <dl class="dl-horizontal col-xs-6 ">
+            <dt>
+                Book value:
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.BookValue)
+            </dd>
+        </dl>
+        <dl class="dl-horizontal col-xs-6">
+            <dt>
+                @Html.DisplayNameFor(model => model.EPS):
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.EPS);
+            </dd>
+        </dl>
+    </div>
+
+    <div class="row bg-info">
+        <dl class="dl-horizontal col-xs-6 ">
+            <dt>
+                Rev share:
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.RevenuePerShareTTM)
+            </dd>
+        </dl>
+        <dl class="dl-horizontal col-xs-6">
+            <dt>
+                Profit margin:
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ProfitMargin)
+            </dd>
+        </dl>
+    </div>
+

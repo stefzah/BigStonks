@@ -49,6 +49,12 @@
     <Reference Include="Apache.Arrow, Version=0.14.1.0, Culture=neutral, PublicKeyToken=204f54e5a45c07df, processorArchitecture=MSIL">
       <HintPath>..\packages\Apache.Arrow.0.14.1\lib\netstandard1.3\Apache.Arrow.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Data.Analysis, Version=0.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Data.Analysis.0.4.0\lib\netstandard2.0\Microsoft.Data.Analysis.dll</HintPath>
@@ -269,12 +275,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -372,6 +372,18 @@
     <Compile Include="Migrations\202101112252083_myMigration3.Designer.cs">
       <DependentUpon>202101112252083_myMigration3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101121752410_myMigration4.cs" />
+    <Compile Include="Migrations\202101121752410_myMigration4.Designer.cs">
+      <DependentUpon>202101121752410_myMigration4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101121757357_myMigration5.cs" />
+    <Compile Include="Migrations\202101121757357_myMigration5.Designer.cs">
+      <DependentUpon>202101121757357_myMigration5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101121800158_myMigration6.cs" />
+    <Compile Include="Migrations\202101121800158_myMigration6.Designer.cs">
+      <DependentUpon>202101121800158_myMigration6.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -448,6 +460,7 @@
     <Content Include="webfonts\fa-solid-900.woff" />
     <Content Include="webfonts\fa-solid-900.woff2" />
     <Content Include="Views\Stock\Index.cshtml" />
+    <Content Include="Views\Stock\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -496,6 +509,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101112252083_myMigration3.resx">
       <DependentUpon>202101112252083_myMigration3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101121752410_myMigration4.resx">
+      <DependentUpon>202101121752410_myMigration4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101121757357_myMigration5.resx">
+      <DependentUpon>202101121757357_myMigration5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101121800158_myMigration6.resx">
+      <DependentUpon>202101121800158_myMigration6.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

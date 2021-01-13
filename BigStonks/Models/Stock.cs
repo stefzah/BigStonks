@@ -40,11 +40,7 @@ namespace BigStonks.Models
         public string Currency { get; set; }
         public string Country { get; set; }
         public string Sector { get; set; }
-        public double PERatio { get; set; }
-        public double PEGRatio { get; set; }
         public double BookValue { get; set; }
-        public double DividendPerShare { get; set; }
-        public double DividendYield { get; set; }
         public double EPS { get; set; }
         public double RevenuePerShareTTM { get; set; }
         public double ProfitMargin { get; set; }

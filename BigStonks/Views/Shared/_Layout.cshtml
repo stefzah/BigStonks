@@ -42,25 +42,24 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+
                     <li>
-                        <!--<form >
-                        <input class="form-control-static" type="text" placeholder="Search" aria-label="Search" style="margin:10px 20px 10px 20px; width:100%; text-align:center" />
-                            -->
                         @using (Html.BeginForm("Index", "Stock", FormMethod.Get))
                         {
-                            @Html.TextBox("searching")<input type="submit" value="Search" />
+                            <div class="input-group" style="width:100%">
+                                <input type="search" class="form-control rounded" placeholder="Search Stock" aria-label="Search"
+                                       aria-describedby="search-addon" style="height:60px; width:100%" />
+                            </div>
                         }
                     </li>
+                    <li><a href="@Url.Action("Index", "Stock")" class="fas fa-home fa-3x" style="padding-top:20px"></a></li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
     <div class="container body-content" style="padding-top:15px">
-        
+
         @RenderBody()
     </div>
 
